@@ -1,0 +1,22 @@
+{
+  "name": "everytime_clone_nodejs",
+  "version": "1.0.0",
+  "description": "nodeJS로  everyTIme  클론코딩",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimth007kim/everyTime_clone_nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimth007kim/everyTime_clone_nodejs/issues"
+  },
+  "homepage": "https://github.com/kimth007kim/everyTime_clone_nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
