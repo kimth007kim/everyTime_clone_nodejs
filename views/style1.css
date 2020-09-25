@@ -1,0 +1,38 @@
+#box {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "a main b"
+    ". . ."
+    ". . ."
+    "footer footer footer";
+  grid-template-columns: 100px 300px 100px;
+  grid-template-rows: 100px 300px 100px;
+  height: 100%;
+  grid-gap: 20px;
+}
+
+#header {
+  grid-area: header;
+  background-color: red;
+}
+
+#left {
+  grid-area: a;
+  background-color: yellow;
+}
+
+#right {
+  grid-area: b;
+  background-color: green;
+}
+
+#footer {
+  grid-area: footer;
+  background-color: blue;
+}
+
+#main {
+  grid-area: main;
+  background-color: purple;
+}

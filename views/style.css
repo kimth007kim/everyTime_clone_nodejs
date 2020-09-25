@@ -3,9 +3,8 @@
   padding: 0;
 }
 body {
-  /* 언제나 전체 body에는 margin 0을 준다. */
-  margin: 0px;
   font-size: 18px;
+  text-align: center;
   /* color: #fff; */
 }
 #box {
@@ -13,39 +12,54 @@ body {
   height: auto;
   margin: auto;
   background-color: black;
+  min-height: 300px;
 }
 #header {
   background-color: red;
-  height: 80px;
+  height: 50px;
   /* height: 100px;
   line-height: 100px;
   font-size: 30px;
   border-bottom: 3px solid #000;
   text-align: center; */
 }
-#left {
+#header,
+#footer,
+#main,
+#left,
+#right {
+  border: 1px solid #999;
+  margin: 5px;
+  /* padding: 10px; */
+}
+#left,
+#main,
+#right {
+  margin: 0 80px;
   float: left;
-  height: 150px;
+  height: 200px;
+}
+#left {
+  /* float: left; */
   background-color: yellow;
-  width: 10%;
+  width: 80px;
 }
 #main {
-  float: left;
+  /* float: left; */
   background-color: green;
-  widows: 80%;
-  height: 150px;
+  width: 160px;
 }
 #right {
-  float: left;
+  /* float: left; */
   background-color: blue;
-  width: 10%;
-  height: 150px;
+  width: 80px;
 }
 
 #footer {
-  position: relative;
   clear: both;
-  float: left;
+  /* float: left; */
+  position: relative;
+  height: 50px;
   background-color: darkslateblue;
   /* border-top: 1px solid #666;
   height: 70px;
