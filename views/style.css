@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* 언제나 전체 body에는 margin 0을 준다. */
+  margin: 0px;
+  font-size: 18px;
+  /* color: #fff; */
+}
+#box {
+  position: relative;
+  height: auto;
+  margin: auto;
+  background-color: black;
+}
+#header {
+  background-color: red;
+  height: 80px;
+  /* height: 100px;
+  line-height: 100px;
+  font-size: 30px;
+  border-bottom: 3px solid #000;
+  text-align: center; */
+}
+#left {
+  float: left;
+  height: 150px;
+  background-color: yellow;
+  width: 10%;
+}
+#main {
+  float: left;
+  background-color: green;
+  widows: 80%;
+  height: 150px;
+}
+#right {
+  float: left;
+  background-color: blue;
+  width: 10%;
+  height: 150px;
+}
+
+#footer {
+  position: relative;
+  clear: both;
+  float: left;
+  background-color: darkslateblue;
+  /* border-top: 1px solid #666;
+  height: 70px;
+  line-height: 70px;
+  text-align: center; */
+}
+/* #content {
+  width: 800px;
+  height: 300px;
+  margin: 0 auto;
+  border-left: 1px solid #bebebe;
+  border-right: 1px solid #bebebe;
+  background: #f5f5f5;
+} */
