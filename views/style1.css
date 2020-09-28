@@ -6,30 +6,173 @@ body {
   font-size: 18px;
   text-align: center;
 }
-#wrap {
-  width: 1080px;
-}
 
+/*  ----------------------------헤더------------------------------ */
+#header {
+  height: 75px;
+  /* position: sticky; */
+  /* top: 4px; */
+  /* background-color: green; */
+}
+#logo {
+  float: left;
+}
+nav > div.wrap {
+  background-color: fuchsia;
+  margin: 0 auto;
+  width: 1180px;
+  height: 100%;
+}
+/* ------------------------------------------------------- */
+
+/* ----------------------------서브메뉴-------------------- */
+#submenu {
+  width: 100%;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #d6d6d6;
+  text-align: left;
+  margin-bottom: 20px;
+}
+#submenu > div.wrap > div.divider {
+  width: 1px;
+  height: 150px;
+  background-color: black;
+  display: inline-block;
+  margin-right: 15px;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  padding-bottom: 3px;
+}
+/* #submenu > #wrapper1 {
+  margin: 0 auto;
+  padding: 0 550px;
+} */
+
+#submenu > div.wrap > div {
+  width: 130px;
+}
+#submenu > div.wrap {
+  padding-top: 10px;
+  background-color: salmon;
+  margin: 0 auto;
+  width: 1180px;
+  height: 100%;
+}
+/* #wrapper1 {
+  margin: 0 auto;
+  padding: 0 280px;
+  width: 1080px;
+  background-color: black; */
+/* } */
+#board1 {
+  background: chartreuse;
+}
+#board2 {
+  background: chocolate;
+}
+#board3 {
+  background: darkblue;
+}
+#board4 {
+  background: darkred;
+}
+#board5 {
+  background: deeppink;
+}
+#board6 {
+  background: rgb(114, 122, 105);
+}
+#board7 {
+  background: forestgreen;
+}
+#submenu > .wrap > div {
+  float: left;
+  width: 100px;
+}
+/* ------------------------------------------------------- */
+
+/* ------------------------------wrap------------ */
+#wrap {
+  margin: 0 auto;
+  width: 1180px;
+  background-color: sandybrown;
+}
+/* -------------------------------------------------- */
 #box {
   padding: 0 50px;
   position: relative;
-  margin: auto;
-  min-height: 300px;
+  margin: 0 auto;
+  min-height: 900px;
   background-color: black;
   display: grid;
   grid-template-areas:
-    "header header header"
     "a main b"
     "a main b"
     "a main b"
+    ". main ."
     "footer footer footer";
-  grid-template-columns: 150px 700px 1fr;
-  grid-template-rows: 100px 100px 100px 100px 100px;
+  grid-template-columns: 175px 1fr 250px;
+  grid-template-rows: 200px 220px 220px 220px 100px;
   height: 100%;
   grid-gap: 5px;
+  grid-auto-flow: column;
 }
 
-#header,
+#board {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "ad ad"
+    "free secret"
+    "A1 A2"
+    "A3 A4"
+    "A5 A6";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 120px 180px 180px 180px 180px;
+}
+
+#ad {
+  grid-area: ad;
+  background-color: red;
+  margin-bottom: 15px;
+}
+#free {
+  grid-area: free;
+  background-color: orange;
+}
+#secret {
+  grid-area: secret;
+  background-color: yellow;
+}
+#A1 {
+  grid-area: A1;
+  background-color: green;
+}
+#A2 {
+  grid-area: A2;
+  background-color: blue;
+}
+#A3 {
+  grid-area: A3;
+  background-color: purple;
+}
+#A4 {
+  grid-area: A4;
+  background-color: black;
+}
+#A5 {
+  grid-area: A5;
+  background-color: fuchsia;
+}
+#A6 {
+  grid-area: A6;
+  background-color: teal;
+}
+
 #footer,
 #main,
 #left,
@@ -37,11 +180,6 @@ body {
   border: 1px solid #999;
   margin: 5px;
   /* padding: 10px; */
-}
-
-#header {
-  grid-area: header;
-  background-color: red;
 }
 
 #left {
@@ -61,5 +199,6 @@ body {
 
 #main {
   grid-area: main;
-  background-color: purple;
+  /* min-height: 1000px; */
+  background-color: gray;
 }
