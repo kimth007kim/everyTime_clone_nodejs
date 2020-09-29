@@ -9,19 +9,70 @@ body {
 
 /*  ----------------------------헤더------------------------------ */
 #header {
+  display: flex;
   height: 75px;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
   /* position: sticky; */
   /* top: 4px; */
   /* background-color: green; */
 }
 #logo {
   float: left;
+  margin-left: 24px;
+  padding: 12px 16px 20px 0px;
+}
+#logo > img {
+  margin-right: 10px;
+  height: 40px;
+  width: 40px;
+}
+#logo > p {
+  display: inline-block;
+}
+.schoolname {
+  display: block;
+}
+/* #logo > p > span.name.eta {
+  margin-left: 20px;
+} */
+.eta {
+  margin-top: 20px;
+  margin-left: 3px;
+  line-height: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #c62917;
+}
+
+.schoolname {
+  font-size: 22px;
 }
 nav > div.wrap {
-  background-color: fuchsia;
+  /* background-color: fuchsia; */
   margin: 0 auto;
   width: 1180px;
   height: 100%;
+}
+/* ---- */
+
+#menu {
+  margin: 0 auto;
+  width: 600px;
+  /* height: 100%; */
+}
+#menu > ul > li {
+  display: inline-block;
+  padding: 25px 12px;
+  color: #4c4c4c;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ---- */
+#account {
+  margin: 0 auto;
+  float: right;
 }
 /* ------------------------------------------------------- */
 
@@ -34,10 +85,11 @@ nav > div.wrap {
   text-align: left;
   margin-bottom: 20px;
 }
+
 #submenu > div.wrap > div.divider {
   width: 1px;
   height: 150px;
-  background-color: black;
+  background-color: #e3e3e3;
   display: inline-block;
   margin-right: 15px;
 }
@@ -57,7 +109,7 @@ li {
 }
 #submenu > div.wrap {
   padding-top: 10px;
-  background-color: salmon;
+  /* background-color: salmon; */
   margin: 0 auto;
   width: 1180px;
   height: 100%;
@@ -69,25 +121,25 @@ li {
   background-color: black; */
 /* } */
 #board1 {
-  background: chartreuse;
+  /* background: chartreuse; */
 }
 #board2 {
-  background: chocolate;
+  /* background: chocolate; */
 }
 #board3 {
-  background: darkblue;
+  /* background: darkblue; */
 }
 #board4 {
-  background: darkred;
+  /* background: darkred; */
 }
 #board5 {
-  background: deeppink;
+  /* background: deeppink; */
 }
 #board6 {
-  background: rgb(114, 122, 105);
+  /* background: rgb(114, 122, 105); */
 }
 #board7 {
-  background: forestgreen;
+  /* background: forestgreen; */
 }
 #submenu > .wrap > div {
   float: left;
@@ -116,7 +168,7 @@ li {
     ". main ."
     "footer footer footer";
   grid-template-columns: 175px 1fr 250px;
-  grid-template-rows: 200px 220px 220px 220px 100px;
+  grid-template-rows: 250px 220px 300px 300px 100px;
   height: 100%;
   grid-gap: 5px;
   grid-auto-flow: column;
@@ -132,7 +184,9 @@ li {
     "A3 A4"
     "A5 A6";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 120px 180px 180px 180px 180px;
+  grid-template-rows: 160px 194px 194px 194px 194px;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
 }
 
 #ad {
