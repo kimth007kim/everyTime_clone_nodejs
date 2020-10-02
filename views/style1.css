@@ -6,6 +6,9 @@ body {
   font-size: 18px;
   text-align: center;
 }
+a {
+  text-decoration: none;
+}
 
 /*  ----------------------------헤더------------------------------ */
 #header {
@@ -13,6 +16,7 @@ body {
   height: 75px;
   border-top: 1px solid #d6d6d6;
   border-bottom: 1px solid #d6d6d6;
+  padding-bottom: 7px;
   /* position: sticky; */
   /* top: 4px; */
   /* background-color: green; */
@@ -32,6 +36,8 @@ body {
 }
 .schoolname {
   display: block;
+  font-size: 22px;
+  padding-left: 10px;
 }
 /* #logo > p > span.name.eta {
   margin-left: 20px;
@@ -45,9 +51,6 @@ body {
   color: #c62917;
 }
 
-.schoolname {
-  font-size: 22px;
-}
 nav > div.wrap {
   /* background-color: fuchsia; */
   margin: 0 auto;
@@ -71,8 +74,32 @@ nav > div.wrap {
 
 /* ---- */
 #account {
-  margin: 0 auto;
+  padding: 20px 0;
+  margin-right: 24px;
   float: right;
+}
+#acount > .button {
+  padding: 0 12px;
+}
+
+#account a {
+  position: relative;
+  display: inline-block;
+  margin-left: 4px;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  vertical-align: top;
+  color: #666;
+}
+
+#account a.button.red {
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  background-color: #c62917;
 }
 /* ------------------------------------------------------- */
 
@@ -151,15 +178,15 @@ li {
 #wrap {
   margin: 0 auto;
   width: 1180px;
-  background-color: sandybrown;
+  /* background-color: sandybrown; */
 }
 /* -------------------------------------------------- */
 #box {
-  padding: 0 50px;
+  /* padding: 0 50px; */
   position: relative;
   margin: 0 auto;
   min-height: 900px;
-  background-color: black;
+  /* background-color: black; */
   display: grid;
   grid-template-areas:
     "a main b"
@@ -167,7 +194,7 @@ li {
     "a main b"
     ". main ."
     "footer footer footer";
-  grid-template-columns: 175px 1fr 250px;
+  grid-template-columns: 175px 1fr 350px;
   grid-template-rows: 250px 220px 300px 300px 100px;
   height: 100%;
   grid-gap: 5px;
@@ -187,44 +214,54 @@ li {
   grid-template-rows: 160px 194px 194px 194px 194px;
   grid-column-gap: 3px;
   grid-row-gap: 3px;
+  border: 1px solid black;
 }
 
 #ad {
   grid-area: ad;
-  background-color: red;
+  /* background-color: red; */
   margin-bottom: 15px;
+  border: 1px solid black;
 }
 #free {
   grid-area: free;
-  background-color: orange;
+  border: 1px solid black;
+  /* background-color: orange; */
 }
 #secret {
   grid-area: secret;
-  background-color: yellow;
+  border: 1px solid black;
+  /* background-color: yellow; */
 }
 #A1 {
   grid-area: A1;
-  background-color: green;
+  border: 1px solid black;
+  /* background-color: green; */
 }
 #A2 {
   grid-area: A2;
-  background-color: blue;
+  border: 1px solid black;
+  /* background-color: blue; */
 }
 #A3 {
   grid-area: A3;
-  background-color: purple;
+  border: 1px solid black;
+  /* background-color: purple; */
 }
 #A4 {
   grid-area: A4;
-  background-color: black;
+  border: 1px solid black;
+  /* background-color: black; */
 }
 #A5 {
   grid-area: A5;
-  background-color: fuchsia;
+  border: 1px solid black;
+  /* background-color: fuchsia; */
 }
 #A6 {
   grid-area: A6;
-  background-color: teal;
+  border: 1px solid black;
+  /* background-color: teal; */
 }
 
 #footer,
@@ -238,21 +275,21 @@ li {
 
 #left {
   grid-area: a;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 #right {
   grid-area: b;
-  background-color: green;
+  /* background-color: green; */
 }
 
 #footer {
   grid-area: footer;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 #main {
   grid-area: main;
   /* min-height: 1000px; */
-  background-color: gray;
+  /* background-color: gray; */
 }
