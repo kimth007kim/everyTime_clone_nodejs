@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        title
+        style
+            include loginstyle.css
+    body
+        #container
+            .logo
+                a(href="/")
+                    img#img(src="/logo.png")
+                h3 지금 에브리타임을 시작하세요
+            form(action='/login' method='/post')
+                p.input
+                    input(type='text' name='userid' placeholder='아이디').text
+                p.input
+                    input(type='password' name='password' placeholder='비밀번호').text
+                p.submit
+                    input(type="submit" value="로그인" ).text
+                label.autologin
+                    input(type="checkbox" name="autologin" value="1")
+                p.register
+                      a(href='/register').button.red 회원가입
+                p.find
+                      a(href='/forgot').button.red 아이디/비밀번호 찾기

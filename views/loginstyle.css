@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#container {
+  margin: 0 auto;
+  margin-top: 30px;
+  /* position: absolute; */
+  height: 280px;
+  width: 360px;
+  /* top: 50%;
+  left: 50%; */
+}
+#img {
+  height: 60px;
+  width: 60px;
+}
+input {
+  border: none;
+}
+.logo > h3 {
+  padding-top: 40px;
+  float: right;
+  font-size: 16px;
+}
+#container .logo {
+  margin-bottom: 15px;
+  height: 60px;
+}
+#container p.input {
+  /* height: 10px; */
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border: 1px solid #d6d6d6;
+  background-color: #fff;
+}
+#container p input.text {
+  height: 28px;
+  width: 100%;
+  /* background-color: transparent; */
+}
+.register {
+  float: right;
+}

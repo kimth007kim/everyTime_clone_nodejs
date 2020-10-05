@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kimth007kim/everyTime_clone_nodejs#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mysql": "^2.18.1",
     "pug": "^3.0.0"
   }
 }
