@@ -5,87 +5,59 @@ block content
         #board
             #ad
             #free
-                h3 비밀게시판
-                hr
-                a(href="/")  
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
+                h3 자유게시판
+                    ul
+                        each free in frees
+                            hr
+                            li
+                                a(href='/free/'+free.f_num)=free.f_title
+                                    //- p=free.f_date     
             #secret
-                h3 비밀게시판
-                hr
-                a(href="/")  
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-
-            #A1
-                h3 비밀게시판
-                hr
-                a(href="/")  
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                
-            #A2
-                h3 비밀게시판
-                hr
-                a(href="/")  
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                
-            #A3
-                h3 비밀게시판
-                hr
-                a(href="/")  
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                
-            #A4
-                h3 비밀게시판
-                hr
-                a(href="/")  
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-            #A5
-                h3 비밀게시판
-                hr
-                a(href="/")  
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-            #A6
-                h3 비밀게시판
-                hr
-                a(href="/")  
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                hr
-                a(href="/") 
-                
+                h3 비밀 게시판
+                    ul
+                        each secret in secrets
+                            hr
+                            li
+                                a(href='/secret/'+secret.f_num)=secret.s_title
+            //- #A1
+            //-     h3 졸업 게시판
+            //-         ul
+            //-             each grad in grads
+            //-                 hr
+            //-                 li
+            //-                     a(href='/grad/'+grad.f_num)=grad.g_title
+            //- #A2
+            //-     h3 장터
+            //-         ul
+            //-             each market in markets
+            //-                 hr
+            //-                 li
+            //-                     a(href='/market/'+market.m_num)=market.m_title
+            //- #A3
+            //-     h3 새내기 게시판
+            //-         ul
+            //-             each fresh in news
+            //-                 hr
+            //-                 li
+            //-                     a(href='/fresh/'+fresh.n_num)=fresh.n_title
+            //- #A4
+            //-     h3 정보 게시판
+            //-         ul
+            //-             each info in infos
+            //-                 hr
+            //-                 li
+            //-                     a(href='/info/'+info.i_num)=info.i_title
+            //- #A5
+            //-     h3 홍보 게시판
+            //-         ul
+            //-             each prom in proms
+            //-                 hr
+            //-                 li
+            //-                     a(href='/prom/'+prom.p_num)=prom.p_title
+            //- #A6
+            //-     h3 동아리 게시판
+            //-         ul
+            //-             each team in teams
+            //-                 hr
+            //-                 li
+            //-                     a(href='/team/'+team.t_num)=team.t_title
