@@ -256,7 +256,7 @@ li {
 #A5 {
   grid-area: A5;
   border: 1px solid black;
-  /* background-color: fuchsia; */
+  /* background-color: fusia; */
 }
 #A6 {
   grid-area: A6;
@@ -292,4 +292,9 @@ li {
   grid-area: main;
   /* min-height: 1000px; */
   /* background-color: gray; */
+}
+
+#board > div.article > li > a {
+  color: black;
+  text-decoration: underline;
 }
