@@ -181,6 +181,9 @@ app.get("/", (req, res) => {
 //         }
 // })
 // });
+app.get("/free", (req, res) => {
+  res.render("free", { title: "free" });
+});
 
 app.get("/login", (req, res) => {
   res.render("login", { title: "login" });

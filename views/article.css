@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 18px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+/*  ----------------------------헤더------------------------------ */
+#header {
+  display: flex;
+  height: 75px;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  padding-bottom: 7px;
+  /* position: sticky; */
+  /* top: 4px; */
+  /* background-color: green; */
+}
+#logo {
+  float: left;
+  margin-left: 24px;
+  padding: 12px 16px 20px 0px;
+}
+#logo > img {
+  margin-right: 10px;
+  height: 40px;
+  width: 40px;
+}
+#logo > p {
+  display: inline-block;
+}
+.schoolname {
+  display: block;
+  font-size: 22px;
+  padding-left: 10px;
+}
+/* #logo > p > span.name.eta {
+  margin-left: 20px;
+} */
+.eta {
+  margin-top: 20px;
+  margin-left: 3px;
+  line-height: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #c62917;
+}
+
+nav > div.wrap {
+  /* background-color: fuchsia; */
+  margin: 0 auto;
+  width: 1180px;
+  height: 100%;
+}
+/* ---- */
+
+#menu {
+  margin: 0 auto;
+  width: 600px;
+  /* height: 100%; */
+}
+#menu > ul > li {
+  display: inline-block;
+  padding: 25px 12px;
+  color: #4c4c4c;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ---- */
+#account {
+  padding: 20px 0;
+  margin-right: 24px;
+  float: right;
+}
+#acount > .button {
+  padding: 0 12px;
+}
+
+#account a {
+  position: relative;
+  display: inline-block;
+  margin-left: 4px;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  vertical-align: top;
+  color: #666;
+}
+
+#account a.button.red {
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  background-color: #c62917;
+}
+/* ------------------------------------------------------- */
+
+/* ----------------------------서브메뉴-------------------- */
+#submenu {
+  width: 100%;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #d6d6d6;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#submenu > div.wrap > div.divider {
+  width: 1px;
+  height: 150px;
+  background-color: #e3e3e3;
+  display: inline-block;
+  margin-right: 15px;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  padding-bottom: 3px;
+}
+/* #submenu > #wrapper1 {
+  margin: 0 auto;
+  padding: 0 550px;
+} */
+
+#submenu > div.wrap > div {
+  width: 130px;
+}
+#submenu > div.wrap {
+  padding-top: 10px;
+  /* background-color: salmon; */
+  margin: 0 auto;
+  width: 1180px;
+  height: 100%;
+}
+/* #wrapper1 {
+  margin: 0 auto;
+  padding: 0 280px;
+  width: 1080px;
+  background-color: black; */
+/* } */
+
+#submenu > .wrap > div {
+  float: left;
+  width: 100px;
+}
+/* ------------------------------------------------------- */
+
+/* ------------------------------wrap------------ */
+#wrap {
+  margin: 0 auto;
+  width: 1180px;
+  /* background-color: sandybrown; */
+}
+/* -------------------------------------------------- */
+#box {
+  /* padding: 0 50px; */
+  position: relative;
+  margin: 0 auto;
+  min-height: 900px;
+  /* background-color: black; */
+  display: grid;
+  grid-template-areas:
+    "main main b"
+    "main main b"
+    "main main b"
+    "main main ."
+    "footer footer footer";
+  grid-template-columns: 175px 1fr 350px;
+  grid-template-rows: 250px 220px 300px 300px 100px;
+  height: 100%;
+  grid-gap: 5px;
+  grid-auto-flow: column;
+}
+
+/* #board {
+  position: relative;
+  display: grid;
+  align-items: stretch;
+  grid-template-areas:
+    "title title"
+    "text text"
+    "comments comments"
+    "commentinput commentinput";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 500px 200px 194px;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+  border: 1px solid black;
+}
+
+#title {
+  grid-area: title;
+  margin-bottom: 15px;
+  border: 1px solid black;
+}
+#text {
+  grid-area: text;
+  border: 1px solid black;
+}
+#comments {
+  grid-area: secret;
+  border: 1px solid black;
+}
+#commnetinput {
+  grid-area: A1;
+  border: 1px solid black;
+} */
+
+.article {
+  border: 1px solid black;
+}
+#board {
+  word-break: break-all;
+  text-align: left;
+}
+/* 게시판 제목 글내용 댓글 댓글 입력 설정 */
+#title {
+  padding: 15px;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+  /* margin-top: 25px; */
+}
+#title > a {
+  text-align: left;
+}
+#title > h3 {
+  color: black;
+}
+
+.profileimg {
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+}
+#text {
+  margin-top: 10px;
+  padding: 15px;
+  margin-bottom: -1px;
+  box-sizing: border-box;
+  border: 1px solid #e3e3e3;
+  background-color: #fff;
+}
+#footer,
+#main,
+#right {
+  border: 1px solid #999;
+  margin: 5px;
+  /* padding: 10px; */
+}
+
+#right {
+  grid-area: b;
+  /* background-color: green; */
+}
+
+#footer {
+  grid-area: footer;
+  /* background-color: blue; */
+}
+
+#main {
+  grid-area: main;
+  /* min-height: 1000px; */
+  /* background-color: gray; */
+}

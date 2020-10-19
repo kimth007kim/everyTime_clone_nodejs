@@ -5,14 +5,15 @@ block content
         #board
             #ad
             #free.article
-                h3 자유게시판
-                    hr
-                    ul
-                        each free in frees
-                            li
-                                a(href='/free/'+free.f_num)=free.f_title
+                a(href='/free') 
+                    h3 자유게시판
+                        hr
+                        ul
+                            each free in frees
+                                li
+                                    a(href='/free/'+free.f_num)=free.f_title
                                     //- p=free.f_date     
-                            hr
+                                hr
             #secret.article
                 h3 비밀 게시판
                     hr
