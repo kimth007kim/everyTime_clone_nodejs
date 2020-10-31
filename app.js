@@ -102,8 +102,17 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 app.post("/login", (req, res) => {
-  let id = req.body.userid;
+  var id = req.body.userid;
   var pw = req.body.password;
+  var sql = "Select * from user where id=?";
+  client.query(sql, [id], function (err, results) {
+    if (err) {
+      console.log(err);
+    }
+    if (!result[0]) {
+      return res.send("please check your id.");
+    }
+  });
   console.log(id);
   console.log(pw);
 });
