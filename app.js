@@ -105,12 +105,32 @@ app.post("/login", (req, res) => {
   var id = req.body.userid;
   var pw = req.body.password;
   var sql = "Select * from user where id=?";
-  client.query(sql, [id], function (err, results) {
+  client.query(sql, [id], (err, results, fields) => {
     if (err) {
-      console.log(err);
-    }
-    if (!result[0]) {
-      return res.send("please check your id.");
+      console.log("에러발생", err);
+      res.send({
+        code: 400,
+        failed: "error ocurred",
+      });
+    } else {
+      if (results.length > 0) {
+        if (results[0].password == pw) {
+          res.send({
+            code: 200,
+            success: "login sucessfull",
+          });
+        } else {
+          res.send({
+            code: 204,
+            sucess: "아이디와 비번 불일치",
+          });
+        }
+      } else {
+        res.send({
+          code: 204,
+          success: "Email does not exists",
+        });
+      }
     }
   });
   console.log(id);
