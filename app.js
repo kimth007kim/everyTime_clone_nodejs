@@ -123,7 +123,11 @@ app.get("/free", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.render("login", { pass: "tr" });
+  if (req.session.logined) {
+    res.render("index", { id: req.session.userid });
+  } else {
+    res.render("login", { pass: "tr" });
+  }
 });
 app.post("/login", (req, res) => {
   var id = req.body.userid;
@@ -139,11 +143,14 @@ app.post("/login", (req, res) => {
     } else {
       if (results.length > 0) {
         if (results[0].password == pw) {
-          // req.session.logined = ture;
-          // console.log(req.session.logined);
+          req.session.logined = true;
+          req.session.userid = id;
+          console.log(req.session.logined);
           console.log("로그인 성공");
 
           res.redirect("/");
+
+          // res.render("index", { logined: logined });
         } else {
           console.log("false1");
           res.render("login", { pass: "false1" });
@@ -158,6 +165,10 @@ app.post("/login", (req, res) => {
   });
   console.log(id);
   console.log(pw);
+});
+app.post("logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
 });
 app.get("/register", (req, res) => {
   res.render("register");
