@@ -6,6 +6,13 @@ html
             include loginstyle.css
     body
         #container
+            if pass == "false1"
+                script.
+                    alert('아이디 비번 불일치')
+            else if pass == "false2"
+                script.
+                    alert('아이디가 존재 하지 않습니다.')
+
             .logo
                 a(href="/")
                     img#img(src="/logo.png")
