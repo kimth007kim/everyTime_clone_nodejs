@@ -149,7 +149,6 @@ app.post("/login", (req, res) => {
           console.log("로그인 성공");
 
           res.redirect("/");
-
           // res.render("index", { logined: logined });
         } else {
           console.log("false1");

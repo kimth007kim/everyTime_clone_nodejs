@@ -13,8 +13,11 @@ html
                         span.eta 에브리타임
                         span.schoolname 안양대
                 #account
-                    a(href='/login').button 로그인
-                    a(href='/register').button.red 회원가입
+                    if pass == "false1"
+                        a(href='/login').button 로그인
+                    else if pass == "false2"
+                        a(href='/login').button 로그인
+                        a(href='/register').button.red 회원가입
                 #menu
                     ul 
                         li 게시판
