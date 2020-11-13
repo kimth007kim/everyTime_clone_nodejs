@@ -149,7 +149,8 @@ app.post("/login", (req, res) => {
           console.log("로그인 성공");
 
           res.redirect("/");
-          // res.render("index", { logined: logined });
+          // res.redirect("/", { pass: "logined" });
+          // res.render("index", { pass: "logined" });
         } else {
           console.log("false1");
           res.render("login", { pass: "false1" });

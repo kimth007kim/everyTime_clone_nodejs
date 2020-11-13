@@ -13,9 +13,9 @@ html
                         span.eta 에브리타임
                         span.schoolname 안양대
                 #account
-                    if pass == "false1"
-                        a(href='/login').button 로그인
-                    else if pass == "false2"
+                    if pass == "logined"
+                        a(href='/login').button 로그아웃
+                    else
                         a(href='/login').button 로그인
                         a(href='/register').button.red 회원가입
                 #menu
