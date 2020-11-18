@@ -232,8 +232,11 @@ li {
 }
 
 #board {
+  float: none;
+  position: relative;
   word-break: break-all;
   text-align: left;
+  /* height: 1000px; */
 }
 /* 게시판 제목 글내용 댓글 댓글 입력 설정 */
 #title {
@@ -282,6 +285,43 @@ li {
 
 #main {
   grid-area: main;
+
   /* min-height: 1000px; */
   /* background-color: gray; */
+}
+#board > #text > img {
+  float: left;
+  margin: 0 10px 15px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+#board > #text {
+  display: block;
+  padding: 15px;
+}
+
+#board > #text > div.profile > h3.large {
+  height: 20px;
+  max-width: 200px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#board > #text > div.profile > time.large {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #a6a6a6;
+  letter-spacing: 0;
+  /* margin-bottom: 200px; */
+}
+
+#board > div.article > .profile > h2.large {
+  padding-top: 12px;
+  /* float: left; */
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
 }

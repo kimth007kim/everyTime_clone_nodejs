@@ -9,8 +9,8 @@ body {
 hr {
   border: none;
   height: 1px;
-  color: #333; /* old IE */
-  background-color: #333; /* Modern Browsers */
+  color: #d6d6d6; /* old IE */
+  background-color: #d6d6d6; /* Modern Browsers */
 }
 a {
   text-decoration: none;

@@ -9,11 +9,14 @@ block content
             #text.article
                 img.profileimg(src="/0.png")
                 .profile
-                    h3.large
-                    time.large
-                
-        
-            form.writecomment
+                    h3.large 익명
+                    time.large dsfds
+                    h2.large 치즈아깽이
+
+                    h4.large ㅁㄴㄹㄴㅇㅁㅎㅇㅁㄴ
+            form(action='/login' method='post').writecomment
+                input(type='text' name='text' placeholder='댓글을 입력하세요').text
+                input(type="submit") 
             //- foreach 
             //- #comments.article
             //-     h3 댓글
