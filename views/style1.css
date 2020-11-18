@@ -6,6 +6,12 @@ body {
   font-size: 18px;
   text-align: center;
 }
+hr {
+  border: none;
+  height: 1px;
+  color: #333; /* old IE */
+  background-color: #333; /* Modern Browsers */
+}
 a {
   text-decoration: none;
   color: black;
@@ -39,7 +45,11 @@ a:active {
   margin-left: 24px;
   padding: 12px 16px 20px 0px;
 }
-#logo > img {
+#ad > img {
+  height: 145px;
+  width: 645px;
+}
+#logo > a > img {
   margin-right: 10px;
   height: 40px;
   width: 40px;
@@ -227,61 +237,138 @@ li {
   grid-template-rows: 160px 194px 194px 194px 194px;
   grid-column-gap: 3px;
   grid-row-gap: 3px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+}
+#lfbar {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "lflogin"
+    "lfad1"
+    "lfad2"
+    "lfad3";
+  grid-template-columns: 1fr;
+  grid-template-rows: 180px 118px 118px 118px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+#rightbar {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "rsearch"
+    "rarticle1"
+    "rarticle2"
+    "rarticle3";
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 232px 232px 232px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+#rsearch {
+  grid-area: rsearch;
+  border: 1px solid #d6d6d6;
+}
+#rarticle1 {
+  grid-area: rarticle1;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+  /* border: 1px solid black; */
+}
+#rarticle2 {
+  grid-area: rarticle2;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+  /* border: 1px solid black; */
+}
+#rarticle3 {
+  grid-area: rarticle3;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+  /* border: 1px solid black; */
 }
 
 #ad {
   grid-area: ad;
+  padding-top: 5px;
   /* background-color: red; */
   margin-bottom: 15px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
+
 #free {
   grid-area: free;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid black; */
   /* background-color: orange; */
 }
 #secret {
   grid-area: secret;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid black; */
   /* background-color: yellow; */
 }
 #A1 {
   grid-area: A1;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid black; */
   /* background-color: green; */
 }
 #A2 {
   grid-area: A2;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid black; */
   /* background-color: blue; */
 }
 #A3 {
   grid-area: A3;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid black; */
   /* background-color: purple; */
 }
 #A4 {
   grid-area: A4;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid black; */
   /* background-color: black; */
 }
 #A5 {
   grid-area: A5;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid black; */
   /* background-color: fusia; */
 }
 #A6 {
   grid-area: A6;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid black; */
   /* background-color: teal; */
+}
+
+#lflogin {
+  grid-area: lflogin;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+}
+#lfad1 {
+  grid-area: lfad1;
+  border: 1px solid black;
+}
+#lfad2 {
+  grid-area: lfad2;
+  border: 1px solid black;
+}
+#lfad3 {
+  grid-area: lfad3;
+  border: 1px solid black;
 }
 
 #footer,
 #main,
 #left,
 #right {
-  border: 1px solid #999;
+  /* border: 1px solid #999; */
   margin: 5px;
   /* padding: 10px; */
 }
@@ -310,4 +397,37 @@ li {
 #board > div.article > li > a {
   color: black;
   text-decoration: underline;
+}
+
+#lflogin > form.login {
+  padding: 30px 15px 15px 15px;
+}
+
+#lflogin > form.login > h3 {
+  margin-bottom: 15px;
+  padding: 0;
+  color: #292929;
+  font-size: 13px;
+  font-weight: normal;
+  text-align: center;
+}
+#lflogin > form.login > a.button {
+  display: block;
+  margin-bottom: 5px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+#lflogin > form.login > a.button.login {
+  border: 1px solid #d6d6d6;
+  color: #737373;
+  background-color: #fff;
+}
+#lflogin > form.login > a.button.register {
+  border: 1px solid #d6d6d6;
+  color: #fff;
+  background-color: #c62917;
 }

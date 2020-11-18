@@ -7,11 +7,12 @@ html
     body
         nav#header
             .wrap
-                #logo
-                    img#img(src="/logo.png")
+                #logo    
+                    a(href='/')
+                        img#img(src="/logo.png")
                     p
                         span.eta 에브리타임
-                        span.schoolname 안양대
+                        span.schoolname 김경동
                 #account
                     if pass == "logined"
                         a(href='/login').button 로그아웃
@@ -32,13 +33,13 @@ html
                 .divider
                 #board1
                     ul
-                        li 1 asdasdada
-                        li 2asdadadas
-                        li 3asdasdasdasdas
+                        li 게시판 목록
+                        li 오늘의 인기글
+                        li 이달의 인기글
                         li 4
                         li 5
                         li 6
-                        li 7
+            
                 .divider
                 #board2
                     ul
@@ -48,7 +49,7 @@ html
                         li 4
                         li 5
                         li 6
-                        li 7
+
                 .divider
                 #board3
                     ul
@@ -58,7 +59,6 @@ html
                         li 4
                         li 5
                         li 6
-                        li 7
                 .divider
                 #board4
                     ul
@@ -68,7 +68,7 @@ html
                         li 4
                         li 5
                         li 6
-                        li 7
+
                 .divider
                 #board5
                     ul
@@ -78,7 +78,7 @@ html
                         li 4
                         li 5
                         li 6
-                        li 7
+
                 .divider
                 #board6
                     ul
@@ -88,7 +88,7 @@ html
                         li 4
                         li 5
                         li 6
-                        li 7
+
                 .divider
                 #board7
                     ul
@@ -98,14 +98,26 @@ html
                         li 4
                         li 5
                         li 6
-                        li 7
+
         #wrap
             #box
-                #left 여긴 left
-                    .login
-                    .ad01
-                    .ad02
-                    .ad03
+                #left
+                    #lfbar
+                        #lflogin
+                            form.login(action='/login' method='get')
+                                h3 커뮤니티 이용을 위해
+                                    br
+                                    strong 로그인이 필요합니다.
+                                a(href='/login').button.login 로그인
+                                a(href='/register').button.register 회원가입
+                        #lfad1
+                        #lfad2
+                        #lfad3
                 block content
-                #right 여긴 right
+                #right 
+                    #rightbar
+                        #rsearch
+                        #rarticle1
+                        #rarticle2
+                        #rarticle3
                 #footer EveryTime CloneCoding

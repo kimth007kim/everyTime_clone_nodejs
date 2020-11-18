@@ -4,6 +4,7 @@ block content
     #main
         #board
             #ad
+                img#mainad(src="/mainad.jpg")
             #free.article
                 a(href='/free') 
                     h3 자유게시판
@@ -14,58 +15,65 @@ block content
                                     a(href='/free/'+free.f_num)=free.f_title     
                                 hr
             #secret.article
-                h3 비밀 게시판
-                    hr
-                    ul
-                        each secret in secrets
-                            li
-                                a(href='/secret/'+secret.s_num)=secret.s_title
-                            hr
+                a(href='/secret') 
+                    h3 비밀 게시판
+                        hr
+                        ul
+                            each secret in secrets
+                                li
+                                    a(href='/secret/'+secret.s_num)=secret.s_title
+                                hr
             #A1.article
-                h3 졸업 게시판
-                    hr
-                    ul
-                        each grad in grads
-                            li
-                                a(href='/grad/'+grad.f_num)=grad.g_title
-                            hr
+                a(href='/grad')
+                    h3 졸업 게시판
+                        hr
+                        ul
+                            each grad in grads
+                                li
+                                    a(href='/grad/'+grad.f_num)=grad.g_title
+                                hr
             #A2.article
-                h3 장터
-                    hr
-                    ul
-                        each market in markets
-                            li
-                                a(href='/market/'+market.m_num)=market.m_title
-                            hr
+                a(href='/market')
+                    h3 장터
+                        hr
+                        ul
+                            each market in markets
+                                li
+                                    a(href='/market/'+market.m_num)=market.m_title
+                                hr
             #A3.article
-                h3 새내기 게시판
-                    hr
-                    ul
-                        each fresh in news
-                            li
-                                a(href='/fresh/'+fresh.n_num)=fresh.n_title
-                            hr
+                a(href='/fresh')
+                    h3 새내기 게시판
+                        hr
+                        ul
+                            each fresh in news
+                                li
+                                    a(href='/fresh/'+fresh.n_num)=fresh.n_title
+                                hr
             #A4.article
-                h3 정보 게시판
-                    hr
-                    ul
-                        each info in infos
-                            li
-                                a(href='/info/'+info.i_num)=info.i_title
-                            hr
+                a(href='/info')
+                    h3 정보 게시판
+                        hr
+                        ul
+                            each info in infos
+                                li
+                                    a(href='/info/'+info.i_num)=info.i_title
+                                hr
             #A5.article
-                h3 홍보 게시판
-                    hr
-                    ul
-                        each prom in proms
-                            li
-                                a(href='/prom/'+prom.p_num)=prom.p_title
-                            hr
+                a(href='/prom')
+                    h3 홍보 게시판
+                        hr
+                        ul
+                            each prom in proms
+                                li
+                                    a(href='/prom/'+prom.p_num)=prom.p_title
+                                hr
             #A6.article
-                h3 동아리 게시판
-                    hr
-                    ul
-                        each team in teams
-                            li
-                                a(href='/team/'+team.t_num)=team.t_title
-                            hr
+                a(href='/team')
+                    h3 동아리 게시판
+                        hr
+                        ul
+                            each team in teams
+                                li
+                                    a(href='/team/'+team.t_num)=team.t_title
+                                hr

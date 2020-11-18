@@ -8,7 +8,8 @@ html
         nav#header
             .wrap
                 #logo
-                    img#img(src="/logo.png")
+                    a(href='/')
+                        img#img(src="/logo.png")
                     p
                         span.eta 에브리타임
                         span.schoolname 안양대
@@ -99,5 +100,10 @@ html
         #wrap
             #box
                 block content
-                #right 여긴 right
+                #right 
+                    #rightbar
+                        #rsearch
+                        #rarticle1
+                        #rarticle2
+                        #rarticle3
                 #footer EveryTime CloneCoding

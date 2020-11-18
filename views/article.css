@@ -40,7 +40,7 @@ a:active {
   margin-left: 24px;
   padding: 12px 16px 20px 0px;
 }
-#logo > img {
+#logo > a > img {
   margin-right: 10px;
   height: 40px;
   width: 40px;
@@ -194,44 +194,43 @@ li {
   grid-gap: 5px;
   grid-auto-flow: column;
 }
-
-/* #board {
+#rightbar {
   position: relative;
   display: grid;
-  align-items: stretch;
   grid-template-areas:
-    "title title"
-    "text text"
-    "comments comments"
-    "commentinput commentinput";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100px 500px 200px 194px;
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
-  border: 1px solid black;
+    "rsearch"
+    "rarticle1"
+    "rarticle2"
+    "rarticle3";
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 232px 232px 232px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
 }
 
-#title {
-  grid-area: title;
-  margin-bottom: 15px;
-  border: 1px solid black;
+#rsearch {
+  grid-area: rsearch;
+  border: 1px solid #d6d6d6;
 }
-#text {
-  grid-area: text;
-  border: 1px solid black;
+#rarticle1 {
+  grid-area: rarticle1;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+  /* border: 1px solid black; */
 }
-#comments {
-  grid-area: secret;
-  border: 1px solid black;
+#rarticle2 {
+  grid-area: rarticle2;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+  /* border: 1px solid black; */
 }
-#commnetinput {
-  grid-area: A1;
-  border: 1px solid black;
-} */
+#rarticle3 {
+  grid-area: rarticle3;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+  /* border: 1px solid black; */
+}
 
-.article {
-  border: 1px solid black;
-}
 #board {
   word-break: break-all;
   text-align: left;
@@ -266,7 +265,7 @@ li {
 #footer,
 #main,
 #right {
-  border: 1px solid #999;
+  /* border: 1px solid #999; */
   margin: 5px;
   /* padding: 10px; */
 }
