@@ -325,3 +325,6 @@ li {
   font-size: 22px;
   font-weight: bold;
 }
+#board > .wirtecomment > .text {
+  width: 100%;
+}
