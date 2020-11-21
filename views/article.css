@@ -344,7 +344,7 @@ li {
   margin: 0;
   padding: 10px 85px 10px 10px;
   border: 0;
-  /* width: 90%; */
+  width: 80%;
   height: 40px;
   line-height: 20px;
   box-sizing: border-box;
@@ -355,11 +355,17 @@ li {
   background-color: transparent;
 }
 
-#board > #board > form.writecomment > input.submit {
-  float: right;
+#board > #comment > form.writecomment > input.submit {
   position: absolute;
   right: 0;
   top: 0;
-  height: 40px;
   font-size: 0;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40px 40px;
+  cursor: pointer;
+  background-color: red;
 }
