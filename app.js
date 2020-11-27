@@ -122,6 +122,14 @@ app.get("/free", (req, res) => {
   res.render("free", { title: "free" });
 });
 
+app.get("/articlelist", (req, res) => {
+  res.render("articlelist", { title: "articlelist" });
+});
+
+app.get("/writearticle", (req, res) => {
+  res.render("writearticle", { title: "writearticle" });
+});
+
 app.get("/login", (req, res) => {
   if (req.session.logined) {
     res.render("index", { id: req.session.userid });
