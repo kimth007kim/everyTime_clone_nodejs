@@ -6,7 +6,7 @@ block content
             #title.article
                 a(href='/free') 
                     h3 자유 게시판
-            a#writeArticleButton 새글을 작성해주세요
+            a#writeArticleButton(href='/writearticle') 새글을 작성해주세요
 
             article
                 a.article(href="#")
@@ -20,6 +20,8 @@ block content
                     p.small 테스트
                     h3.small 익명
                     .blanc
+            .next
+                button(method="get").nextbutton 다음
             .pagination
                 form#searchArticleForm.search
                     select(name="search_type")
@@ -28,6 +30,7 @@ block content
                         option(value="2") 글제목
                         option(value="1") 글내용
                     input(name="keyword" placeholder="검색어를 입력하세요.").text
+                    
             //- #comment
             //-     .parent
             //-         img.commentpro(src="https://cf-fpi.everytime.kr/0.png")

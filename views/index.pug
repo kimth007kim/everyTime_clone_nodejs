@@ -5,75 +5,83 @@ block content
         #board
             #ad
                 img#mainad(src="/mainad.jpg")
-            #free.article
-                a(href='/free') 
-                    h3 자유게시판
-                        hr
-                        ul
-                            each free in frees
-                                li
-                                    a(href='/free/'+free.f_num)=free.f_title     
-                                hr
-            #secret.article
-                a(href='/writearticle') 
-                    h3 비밀 게시판
-                        hr
-                        ul
-                            each secret in secrets
-                                li
-                                    a(href='/secret/'+secret.s_num)=secret.s_title
-                                hr
-            #A1.article
-                a(href='/grad')
-                    h3 졸업 게시판
-                        hr
-                        ul
-                            each grad in grads
-                                li
-                                    a(href='/grad/'+grad.f_num)=grad.g_title
-                                hr
-            #A2.article
-                a(href='/market')
-                    h3 장터
-                        hr
-                        ul
-                            each market in markets
-                                li
-                                    a(href='/market/'+market.m_num)=market.m_title
-                                hr
-            #A3.article
-                a(href='/fresh')
-                    h3 새내기 게시판
-                        hr
-                        ul
-                            each fresh in news
-                                li
-                                    a(href='/fresh/'+fresh.n_num)=fresh.n_title
-                                hr
-            #A4.article
-                a(href='/info')
-                    h3 정보 게시판
-                        hr
-                        ul
-                            each info in infos
-                                li
-                                    a(href='/info/'+info.i_num)=info.i_title
-                                hr
-            #A5.article
-                a(href='/prom')
-                    h3 홍보 게시판
-                        hr
-                        ul
-                            each prom in proms
-                                li
-                                    a(href='/prom/'+prom.p_num)=prom.p_title
-                                hr
-            #A6.article
-                a(href='/team')
-                    h3 동아리 게시판
-                        hr
-                        ul
-                            each team in teams
-                                li
-                                    a(href='/team/'+team.t_num)=team.t_title
-                                hr
+            .card
+                #free.article
+                    a(href='/free').list 
+                        h3 자유게시판
+                            hr
+                            ul
+                                each free in frees
+                                    li
+                                        a(href='/free/'+free.f_num)=free.f_title     
+                                    hr
+            .card
+                #secret.article
+                    a(href='/writearticle').list 
+                        h3 비밀 게시판
+                            hr
+                            ul
+                                each secret in secrets
+                                    li
+                                        a(href='/secret/'+secret.s_num)=secret.s_title
+                                    hr
+            .card
+                #A1.article
+                    a(href='/articlelist').list
+                        h3 졸업 게시판
+                            hr
+                            ul
+                                each grad in grads
+                                    li
+                                        a(href='/grad/'+grad.f_num)=grad.g_title
+                                    hr
+            .card
+                #A2.article
+                    a(href='/market').list
+                        h3 장터
+                            hr
+                            ul
+                                each market in markets
+                                    li
+                                        a(href='/market/'+market.m_num)=market.m_title
+                                    hr
+            .card
+                #A3.article
+                    a(href='/fresh').list
+                        h3 새내기 게시판
+                            hr
+                            ul
+                                each fresh in news
+                                    li
+                                        a(href='/fresh/'+fresh.n_num)=fresh.n_title
+                                    hr
+            .card
+                #A4.article
+                    a(href='/info').list
+                        h3 정보 게시판
+                            hr
+                            ul
+                                each info in infos
+                                    li
+                                        a(href='/info/'+info.i_num)=info.i_title
+                                    hr
+            .card
+                #A5.article
+                    a(href='/prom').list
+                        h3 홍보 게시판
+                            hr
+                            ul
+                                each prom in proms
+                                    li
+                                        a(href='/prom/'+prom.p_num)=prom.p_title
+                                    hr
+            .card
+                #A6.article
+                    a(href='/team').list
+                        h3 동아리 게시판
+                            hr
+                            ul
+                                each team in teams
+                                    li
+                                        a(href='/team/'+team.t_num)=team.t_title
+                                    hr

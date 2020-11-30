@@ -118,13 +118,18 @@ nav > div.wrap {
 /* ------------------------------------------------------- */
 
 /* ----------------------------서브메뉴-------------------- */
+
 #submenu {
-  width: 100%;
-  height: 200px;
-  background-color: #f2f2f2;
   border-bottom: 1px solid #d6d6d6;
-  text-align: left;
-  margin-bottom: 20px;
+  background-color: #f2f2f2;
+}
+#submenu > div.wrap {
+  box-sizing: border-box;
+  font-size: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
 }
 
 #submenu > div.wrap > div.divider {
@@ -134,27 +139,63 @@ nav > div.wrap {
   display: inline-block;
   margin-right: 15px;
 }
-ul {
+#submenu > div.wrap > ul {
+  margin: -3px auto;
+  max-width: 780px;
+  font-size: 0;
+  white-space: normal;
+}
+#submenu > div.wrap {
+  padding: 15px;
+}
+
+#submenu > div.wrap {
+  box-sizing: border-box;
+  font-size: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+}
+ul,
+ol,
+li,
+menu {
   list-style-type: none;
 }
 li {
   padding-bottom: 3px;
+}
+#submenu > div.wrap > ul {
+  margin: -3px auto;
+  max-width: 780px;
+  font-size: 0;
+  white-space: normal;
+}
+#submenu > div.wrap > ul > li {
+  margin: 3px 10px;
+  max-width: 130px;
+}
+
+#submenu > div.wrap > ul > li {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#submenu > div.wrap > ul > li > a {
+  font-size: 14px;
+  color: #4c4c4c;
 }
 /* #submenu > #wrapper1 {
   margin: 0 auto;
   padding: 0 550px;
 } */
 
-#submenu > div.wrap > div {
+/* #submenu > div.wrap > div {
   width: 130px;
-}
-#submenu > div.wrap {
-  padding-top: 10px;
-  /* background-color: salmon; */
-  margin: 0 auto;
-  width: 1180px;
-  height: 100%;
-}
+} */
+
 /* #wrapper1 {
   margin: 0 auto;
   padding: 0 280px;
@@ -162,10 +203,10 @@ li {
   background-color: black; */
 /* } */
 
-#submenu > .wrap > div {
+/* #submenu > .wrap > div {
   float: left;
   width: 100px;
-}
+} */
 /* ------------------------------------------------------- */
 
 /* ------------------------------wrap------------ */
@@ -400,6 +441,10 @@ li {
   font-size: 14px;
 }
 
+#main > #board > .next > .nextbutton {
+  float: right;
+}
+
 #writeArticleButton {
   display: block;
   margin-bottom: 5px;
@@ -470,4 +515,45 @@ li {
 }
 #main > #board > article div.blanc {
   padding: 5px;
+}
+
+#board > #writeArticle > form.write {
+  position: relative;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border: 2px solid #d6d6d6;
+  box-sizing: border-box;
+}
+
+#board > #writeArticle > form.write p {
+  padding: 15px;
+  border-bottom: 1px solid #e3e3e3;
+  background-color: #fff;
+}
+#board > #writeArticle > form.write input.title {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  border: 0;
+  color: #292929;
+  font-size: 16px;
+  font-weight: bold;
+}
+#board > #writeArticle > form.write textarea {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  border: 0;
+  color: #292929;
+  font-size: 16px;
+  font-weight: bold;
+}
+#board > #writeArticle > form.write textarea.large {
+  height: 350px;
+}
+#board > #writeArticle > form.write .submit {
+  float: right;
+  background-color: #c62917;
+  border: none;
+  background-image: url(/images/pencil.png) no-repeat top left;
 }
