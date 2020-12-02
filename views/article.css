@@ -6,6 +6,36 @@ body {
   font-size: 18px;
   text-align: center;
 }
+body,
+div,
+nav,
+aside,
+article,
+h1,
+h2,
+h3,
+h4,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+span,
+form,
+th,
+td,
+input,
+textarea,
+select,
+pre,
+address {
+  color: #666;
+  font-family: "맑은 고딕", 돋움, tahoma;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+}
 a {
   text-decoration: none;
   color: black;
@@ -341,8 +371,14 @@ li {
   display: block;
   padding: 15px;
 }
+#board > .article > h1 > a {
+  color: #292929;
+  font-size: 22px;
+  font-weight: bold;
+}
 
 #board > #text > div.profile > h3.large {
+  color: #292929;
   height: 20px;
   max-width: 200px;
   line-height: 20px;
@@ -354,15 +390,16 @@ li {
   height: 20px;
   line-height: 20px;
   font-size: 12px;
-  color: #a6a6a6;
+  color: #292929;
   letter-spacing: 0;
   /* margin-bottom: 200px; */
 }
 
 #board > div.article > .profile > h2.large {
-  padding-top: 12px;
+  padding-top: 15px;
   /* float: left; */
   margin-bottom: 15px;
+  color: #292929;
   font-size: 22px;
   font-weight: bold;
 }

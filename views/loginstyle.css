@@ -2,6 +2,36 @@
   margin: 0;
   padding: 0;
 }
+body,
+div,
+nav,
+aside,
+article,
+h1,
+h2,
+h3,
+h4,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+span,
+form,
+th,
+td,
+input,
+textarea,
+select,
+pre,
+address {
+  color: #666;
+  font-family: "맑은 고딕", 돋움, tahoma;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+}
 #container {
   margin: 0 auto;
   margin-top: 30px;

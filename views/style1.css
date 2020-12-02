@@ -6,6 +6,36 @@ body {
   font-size: 18px;
   text-align: center;
 }
+body,
+div,
+nav,
+aside,
+article,
+h1,
+h2,
+h3,
+h4,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+span,
+form,
+th,
+td,
+input,
+textarea,
+select,
+pre,
+address {
+  color: #666;
+  font-family: "맑은 고딕", 돋움, tahoma;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+}
 hr {
   border: none;
   height: 1px;
@@ -47,7 +77,7 @@ a:active {
 }
 #ad > img {
   height: 145px;
-  width: 645px;
+  width: 600px;
 }
 #logo > a > img {
   margin-right: 10px;
@@ -240,7 +270,7 @@ li {
     "a main b"
     ". main ."
     "footer footer footer";
-  grid-template-columns: 175px 1fr 350px;
+  grid-template-columns: 175px 600px 350px;
   grid-template-rows: 250px 220px 300px 300px 100px;
   height: 100%;
   grid-gap: 5px;
@@ -256,10 +286,10 @@ li {
     "A1 A2"
     "A3 A4"
     "A5 A6";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 160px 194px 194px 194px 194px;
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 160px 200px 200px 200px 200px;
+  /* grid-column-gap: 3px; */
+  /* grid-row-gap: 3px; */
 }
 #lfbar {
   position: relative;
@@ -467,10 +497,10 @@ li {
 #board div.article h3 {
   /* float: left; */
   padding: 10px;
-  margin: 0;
+  text-align: left;
 }
 #board div.article h3 > a {
-  /* float: left; */
+  left: 0;
   line-height: 20px;
   color: #c62917;
   font-size: 14px;
@@ -482,6 +512,7 @@ li {
   display: block;
   padding: 10px;
   border-top: 1px solid #e3e3e3;
+  text-align: left;
 }
 #board div.card > div.article > a.list > p {
   /* display: inline-block; */
