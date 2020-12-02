@@ -220,8 +220,10 @@ li {
 
 /* ------------------------------wrap------------ */
 #wrap {
-  margin: 0 auto;
+  position: relative;
+  margin: 0 auto 25px auto;
   width: 1180px;
+  box-sizing: border-box;
   /* background-color: sandybrown; */
 }
 /* -------------------------------------------------- */
@@ -258,7 +260,6 @@ li {
   grid-template-rows: 160px 194px 194px 194px 194px;
   grid-column-gap: 3px;
   grid-row-gap: 3px;
-  /* border: 1px solid black; */
 }
 #lfbar {
   position: relative;
@@ -320,49 +321,49 @@ li {
 
 #free {
   grid-area: free;
-  border: 1px solid #d6d6d6;
+  /* border: 1px solid #d6d6d6; */
   /* border: 1px solid black; */
   /* background-color: orange; */
 }
 #secret {
   grid-area: secret;
-  border: 1px solid #d6d6d6;
+  /* border: 1px solid #d6d6d6; */
   /* border: 1px solid black; */
   /* background-color: yellow; */
 }
 #A1 {
   grid-area: A1;
-  border: 1px solid #d6d6d6;
+  /* border: 1px solid #d6d6d6; */
   /* border: 1px solid black; */
   /* background-color: green; */
 }
 #A2 {
   grid-area: A2;
-  border: 1px solid #d6d6d6;
+  /* border: 1px solid #d6d6d6; */
   /* border: 1px solid black; */
   /* background-color: blue; */
 }
 #A3 {
   grid-area: A3;
-  border: 1px solid #d6d6d6;
+  /* border: 1px solid #d6d6d6; */
   /* border: 1px solid black; */
   /* background-color: purple; */
 }
 #A4 {
   grid-area: A4;
-  border: 1px solid #d6d6d6;
+  /* border: 1px solid #d6d6d6; */
   /* border: 1px solid black; */
   /* background-color: black; */
 }
 #A5 {
   grid-area: A5;
-  border: 1px solid #d6d6d6;
+  /* border: 1px solid #d6d6d6; */
   /* border: 1px solid black; */
   /* background-color: fusia; */
 }
 #A6 {
   grid-area: A6;
-  border: 1px solid #d6d6d6;
+  /* border: 1px solid #d6d6d6; */
   /* border: 1px solid black; */
   /* background-color: teal; */
 }
@@ -453,12 +454,50 @@ li {
   color: black;
   text-decoration: underline;
 }
+#board > div.card {
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 295px;
+  border: 1px solid #e3e3e3;
+  overflow: hidden;
+  background-color: #fff;
+  /* background-color: black; */
+}
+
 #board div.article h3 {
+  /* float: left; */
   padding: 10px;
+  margin: 0;
 }
 #board div.article h3 > a {
+  /* float: left; */
   line-height: 20px;
   color: #c62917;
   font-size: 14px;
   font-weight: bold;
+}
+
+#board div.card > div.article > a {
+  /* float: left; */
+  display: block;
+  padding: 10px;
+  border-top: 1px solid #e3e3e3;
+}
+#board div.card > div.article > a.list > p {
+  /* display: inline-block; */
+  /* margin: 0 auto; */
+  height: 17px;
+  line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #4c4c4c;
+  font-size: 14px;
+}
+
+#board hr {
+  clear: both;
+  width: 100%;
+  height: 0;
+  border: 0;
 }

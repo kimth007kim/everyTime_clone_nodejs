@@ -7,14 +7,11 @@ block content
                 img#mainad(src="/mainad.jpg")
             .card
                 #free.article
-                    a(href='/free').list 
-                        h3 자유게시판
-                            hr
-                            ul
-                                each free in frees
-                                    li
-                                        a(href='/free/'+free.f_num)=free.f_title     
-                                    hr
+                    h3 
+                        a(href='/free') 비밀 게시판
+                    each free in frees
+                        a(href='/free/'+free.f_num).list
+                            p=free.f_title     
             .card
                 #secret.article
                     a(href='/writearticle').list 
