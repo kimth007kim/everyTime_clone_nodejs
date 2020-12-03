@@ -1,4 +1,5 @@
-extends articleLayout
+extends ../articleLayout
+
 
 block content
     #main
@@ -7,19 +8,20 @@ block content
                 h1
                     a(href='/free')=title 
             a#writeArticleButton(href='/writearticle') 새글을 작성해주세요
-
-            article
-                a.article(href="#")
-                    h2.medium 테스트
-                    p.small 테스트
-                    h3.small 익명
+            
+            each prom in proms
+                article
+                    a(href='/prom/'+prom.p_num).articlelist
+                        h2.medium=prom.p_title
+                        p.small=prom.p_txt
+                        h3.small 익명
                     .blanc
-            article
-                a.article(href="#")
-                    h2.medium 테스트
-                    p.small 테스트
-                    h3.small 익명
-                    .blanc
+            //- article
+            //-     a.article(href="#")
+            //-         h2.medium 테스트
+            //-         p.small 테스트
+            //-         h3.small 익명
+            //-         .blanc
             
             .next
                 button(method="get").nextbutton 다음

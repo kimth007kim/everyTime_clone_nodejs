@@ -1,25 +1,26 @@
-extends articleLayout
+extends ../articleLayout
 
 block content
     #main
         #board
             #title.article
                 h1
-                    a(href='/free')=title 
+                    a(href='/new')=title 
             a#writeArticleButton(href='/writearticle') 새글을 작성해주세요
-
-            article
-                a.article(href="#")
-                    h2.medium 테스트
-                    p.small 테스트
-                    h3.small 익명
+            
+            each fresh in news
+                article
+                    a(href='/new/'+fresh.n_num).articlelist
+                        h2.medium=fresh.n_title
+                        p.small=fresh.n_txt
+                        h3.small 익명
                     .blanc
-            article
-                a.article(href="#")
-                    h2.medium 테스트
-                    p.small 테스트
-                    h3.small 익명
-                    .blanc
+            //- article
+            //-     a.article(href="#")
+            //-         h2.medium 테스트
+            //-         p.small 테스트
+            //-         h3.small 익명
+            //-         .blanc
             
             .next
                 button(method="get").nextbutton 다음

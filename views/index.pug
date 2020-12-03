@@ -8,21 +8,21 @@ block content
             .card
                 #free.article
                     h3 
-                        a(href='/free') 비밀 게시판
+                        a(href='/free') 자유게시판
                     each free in frees
                         a(href='/free/'+free.f_num).list
                             p=free.f_title     
             .card
                 #secret.article
                     h3
-                        a(href='/writearticle') 비밀 게시판 
+                        a(href='/secret') 비밀게시판 
                     each secret in secrets
                         a(href='/secret/'+secret.s_num).list
                             p=secret.s_title
             .card
                 #A1.article
                     h3 
-                        a(href='/articlelist') 졸업 게시판
+                        a(href='/grad') 졸업게시판
                     each grad in grads
                         a(href='/grad/'+grad.f_num).list
                             p=grad.g_title
@@ -36,7 +36,7 @@ block content
             .card
                 #A3.article
                     h3 
-                        a(href='/fresh') 새내기 게시판
+                        a(href='/fresh') 새내기게시판
                     each fresh in news
                         a(href='/fresh/'+fresh.n_num).list
                             p=fresh.n_title
@@ -44,14 +44,14 @@ block content
             .card
                 #A4.article
                     h3
-                        a(href='/info') 정보 게시판
+                        a(href='/info') 정보게시판
                     each info in infos
                         a(href='/info/'+info.i_num).list
                             p=info.i_title
             .card
                 #A5.article
                     h3 
-                        a(href='/prom') 홍보 게시판
+                        a(href='/prom') 홍보게시판
                     each prom in proms
                         a(href='/prom/'+prom.p_num).list
                             p=prom.p_title
@@ -59,7 +59,7 @@ block content
             .card
                 #A6.article
                     h3 
-                        a(href='/team') 동아리 게시판
+                        a(href='/team') 동아리게시판
                     each team in teams
                         a(href='/team/'+team.t_num).list
                             p=team.t_title

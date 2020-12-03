@@ -394,6 +394,10 @@ li {
   letter-spacing: 0;
   /* margin-bottom: 200px; */
 }
+#main > #board > article h2.medium {
+  font-weight: bold;
+  color: #292929;
+}
 
 #board > div.article > .profile > h2.large {
   padding-top: 15px;
@@ -518,7 +522,8 @@ li {
   border: 1px solid #e3e3e3;
   background-color: #fff;
 }
-#main > #board > article > a.article {
+
+#main > #board > article > a.articlelist {
   display: block;
   padding: 15px;
 }

@@ -119,7 +119,105 @@ app.get("/", (req, res) => {
 });
 
 app.get("/free", (req, res) => {
-  res.render("free", { title: "free" });
+  const sql = "Select * from free order by f_date DESC limit 8";
+  client.query(sql, (err, frees, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("listArticle/freelist", { title: "자유게시판", frees: frees });
+    }
+  });
+});
+app.get("/secret", (req, res) => {
+  const sql = "Select * from secret order by s_date DESC limit 8";
+  client.query(sql, (err, secrets, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("listArticle/secretlist", {
+        title: "비밀게시판",
+        secrets: secrets,
+      });
+    }
+  });
+});
+app.get("/grad", (req, res) => {
+  const sql = "Select * from grad order by g_date DESC limit 8";
+  client.query(sql, (err, grads, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("listArticle/gradlist", {
+        title: "졸업게시판",
+        grads: grads,
+      });
+    }
+  });
+});
+app.get("/market", (req, res) => {
+  const sql = "Select * from market order by m_date DESC limit 8";
+  client.query(sql, (err, markets, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("listArticle/marketlist", {
+        title: "장터",
+        markets: markets,
+      });
+    }
+  });
+});
+app.get("/fresh", (req, res) => {
+  const sql = "Select * from new order by n_date DESC limit 8";
+  client.query(sql, (err, news, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("listArticle/newlist", {
+        title: "새내기게시판",
+        news: news,
+      });
+    }
+  });
+});
+app.get("/info", (req, res) => {
+  const sql = "Select * from info order by i_date DESC limit 8";
+  client.query(sql, (err, infos, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("listArticle/infolist", {
+        title: "정보게시판",
+        infos: infos,
+      });
+    }
+  });
+});
+app.get("/prom", (req, res) => {
+  const sql = "Select * from prom order by p_date DESC limit 8";
+  client.query(sql, (err, proms, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("listArticle/promlist", {
+        title: "홍보게시판",
+        proms: proms,
+      });
+    }
+  });
+});
+app.get("/team", (req, res) => {
+  const sql = "Select * from team order by t_date DESC limit 8";
+  client.query(sql, (err, teams, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("listArticle/teamlist", {
+        title: "동아리게시판",
+        teams: teams,
+      });
+    }
+  });
 });
 
 app.get("/articlelist", (req, res) => {
@@ -129,6 +227,9 @@ app.get("/articlelist", (req, res) => {
 app.get("/writearticle", (req, res) => {
   res.render("writearticle", { title: "writearticle" });
 });
+// app.get("/writearticle", (req, res) => {
+//   res.render("writearticle", { title: "writearticle" });
+// });
 
 app.get("/login", (req, res) => {
   if (req.session.logined) {
