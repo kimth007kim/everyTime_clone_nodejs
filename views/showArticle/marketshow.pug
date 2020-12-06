@@ -1,24 +1,24 @@
-extends articleLayout
+extends ../articleLayout
 
 block content
     #main
         #board
             #title.article
                 h1
-                    a(href='/free') 자유 게시판 
+                    a(href='/free') 장터 
             #text.article
                 img.profileimg(src="/0.png")
                 .profile
                     h3.large 익명
-                    time.large dsfds
-                    h2.large 치즈아깽이
+                    time.large 비공개
+                    h2.large=row.m_title
 
-                    p.large 글이 완성되어가는 과정인데 CSS는 역시 저한테는 쉽지 않습니다!!! 그래도 화이팅해서 끝내봅시다!
+                    p.large=row.m_txt
             #comment
-                .parent
-                    img.commentpro(src="https://cf-fpi.everytime.kr/0.png")
-                    h3.medium 익명
-                    p.large 아기고양이가 어디있다는 거에요? 아기고양이가?3
+                //- .parent
+                //-     img.commentpro(src="https://cf-fpi.everytime.kr/0.png")
+                //-     h3.medium 익명
+                //-     p.large 아기고양이가 어디있다는 거에요? 아기고양이가?3
                 form(action='/login' method='post').writecomment
                     input(type='text' name='text' placeholder='댓글을 입력하세요').commentblank
                     input(type="submit").submit 

@@ -167,7 +167,7 @@ app.get("/market", (req, res) => {
     }
   });
 });
-app.get("/fresh", (req, res) => {
+app.get("/new", (req, res) => {
   const sql = "Select * from new order by n_date DESC limit 8";
   client.query(sql, (err, news, fields) => {
     if (err) {
@@ -216,6 +216,110 @@ app.get("/team", (req, res) => {
         title: "동아리게시판",
         teams: teams,
       });
+    }
+  });
+});
+app.get("/free/:id", (req, res) => {
+  const sql = "Select * from free where f_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("showArticle/freeshow", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+    }
+  });
+});
+app.get("/secret/:id", (req, res) => {
+  const sql = "Select * from secret where s_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("showArticle/secretshow", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+    }
+  });
+});
+app.get("/grad/:id", (req, res) => {
+  const sql = "Select * from grad where g_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("showArticle/gradshow", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+    }
+  });
+});
+app.get("/market/:id", (req, res) => {
+  const sql = "Select * from market where m_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("showArticle/marketshow", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+    }
+  });
+});
+app.get("/new/:id", (req, res) => {
+  const sql = "Select * from new where n_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("showArticle/newshow", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+    }
+  });
+});
+app.get("/info/:id", (req, res) => {
+  const sql = "Select * from info where i_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("showArticle/infoshow", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+    }
+  });
+});
+app.get("/prom/:id", (req, res) => {
+  const sql = "Select * from prom where p_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("showArticle/promshow", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+    }
+  });
+});
+app.get("/team/:id", (req, res) => {
+  const sql = "Select * from team where t_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("showArticle/teamshow", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
     }
   });
 });

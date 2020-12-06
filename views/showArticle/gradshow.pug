@@ -1,19 +1,19 @@
-extends articleLayout
+extends ../articleLayout
 
 block content
     #main
         #board
             #title.article
                 h1
-                    a(href='/free') 자유 게시판 
+                    a(href='/grad') 졸업게시판
             #text.article
                 img.profileimg(src="/0.png")
                 .profile
                     h3.large 익명
                     time.large 비공개
-                    h2.large=row.f_title
+                    h2.large=row.g_title
 
-                    p.large=row.f_txt
+                    p.large=row.g_txt
             #comment
                 .parent
                     img.commentpro(src="https://cf-fpi.everytime.kr/0.png")

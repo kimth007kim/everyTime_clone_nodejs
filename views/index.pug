@@ -36,9 +36,9 @@ block content
             .card
                 #A3.article
                     h3 
-                        a(href='/fresh') 새내기게시판
+                        a(href='/new') 새내기게시판
                     each fresh in news
-                        a(href='/fresh/'+fresh.n_num).list
+                        a(href='/new/'+fresh.n_num).list
                             p=fresh.n_title
                                     
             .card

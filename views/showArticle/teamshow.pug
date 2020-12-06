@@ -1,19 +1,19 @@
-extends articleLayout
+extends ../articleLayout
 
 block content
     #main
         #board
             #title.article
                 h1
-                    a(href='/free') 자유 게시판 
+                    a(href='/team') 동아리게시판 
             #text.article
                 img.profileimg(src="/0.png")
                 .profile
                     h3.large 익명
-                    time.large dsfds
-                    h2.large 치즈아깽이
+                    time.large 비공개
+                    h2.large=row.t_title
 
-                    p.large 글이 완성되어가는 과정인데 CSS는 역시 저한테는 쉽지 않습니다!!! 그래도 화이팅해서 끝내봅시다!
+                    p.large=row.t_txt
             #comment
                 .parent
                     img.commentpro(src="https://cf-fpi.everytime.kr/0.png")
