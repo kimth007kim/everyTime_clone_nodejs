@@ -324,12 +324,8 @@ app.get("/team/:id", (req, res) => {
   });
 });
 
-app.get("/articlelist", (req, res) => {
-  res.render("articlelist", { title: "articlelist" });
-});
-
-app.get("/writearticle", (req, res) => {
-  res.render("writearticle", { title: "writearticle" });
+app.get("/writefree", (req, res) => {
+  res.render("writeArticle/free");
 });
 // app.get("/writearticle", (req, res) => {
 //   res.render("writearticle", { title: "writearticle" });
