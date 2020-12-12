@@ -327,9 +327,13 @@ app.get("/team/:id", (req, res) => {
 app.get("/writefree", (req, res) => {
   res.render("writeArticle/free");
 });
-// app.get("/writearticle", (req, res) => {
-//   res.render("writearticle", { title: "writearticle" });
-// });
+app.post("/writefree", (req, res) => {
+  var body = req.body;
+  const sql = "Insert into free (id,f_title.f_txt) VALUES (익명,?,?) ";
+  client.query(sql, [body.title, body.text], () => {
+    res.redirect("/listArticle/freelist");
+  });
+});
 
 app.get("/login", (req, res) => {
   if (req.session.logined) {
