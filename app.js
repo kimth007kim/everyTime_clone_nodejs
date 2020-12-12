@@ -118,6 +118,8 @@ app.get("/", (req, res) => {
   // res.send(`Number:${req.session.num}`);
 });
 
+// READ 기능 (리스트)
+
 app.get("/free", (req, res) => {
   const sql = "Select * from free order by f_date DESC limit 8";
   client.query(sql, (err, frees, fields) => {
@@ -219,6 +221,11 @@ app.get("/team", (req, res) => {
     }
   });
 });
+
+// READ 기능 (리스트)
+
+// READ 기능 (특정글)
+
 app.get("/free/:id", (req, res) => {
   const sql = "Select * from free where f_num=?";
   client.query(sql, [req.params.id], (err, rows, fields) => {
@@ -324,17 +331,148 @@ app.get("/team/:id", (req, res) => {
   });
 });
 
+// READ 기능 (특정글)
+
+// CREATE 기능
+
 app.get("/writefree", (req, res) => {
-  res.render("writeArticle/free");
+  res.render("writeArticle/freewrite");
 });
 app.post("/writefree", (req, res) => {
   var body = req.body;
-  const sql = "Insert into free (id,f_title.f_txt) VALUES (익명,?,?) ";
-  client.query(sql, [body.title, body.text], () => {
-    res.redirect("/listArticle/freelist");
+  var sql = "Insert into free (id,f_title,f_txt) VALUES (?,?,?) ";
+  var params = ["익명", body.title, body.text];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/free");
+    }
   });
 });
 
+app.get("/writesecret", (req, res) => {
+  res.render("writeArticle/secretwrite");
+});
+app.post("/writesecret", (req, res) => {
+  var body = req.body;
+  var sql = "Insert into secret (id,s_title,s_txt) VALUES (?,?,?) ";
+  var params = ["익명", body.title, body.text];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/secret");
+    }
+  });
+});
+
+app.get("/writegrad", (req, res) => {
+  res.render("writeArticle/gradwrite");
+});
+app.post("/writegrad", (req, res) => {
+  var body = req.body;
+  var sql = "Insert into grad (id,g_title,g_txt) VALUES (?,?,?) ";
+  var params = ["익명", body.title, body.text];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/grad");
+    }
+  });
+});
+
+app.get("/writemarket", (req, res) => {
+  res.render("writeArticle/marketwrite");
+});
+app.post("/writemarket", (req, res) => {
+  var body = req.body;
+  var sql = "Insert into market (id,m_title,m_txt) VALUES (?,?,?) ";
+  var params = ["익명", body.title, body.text];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/market");
+    }
+  });
+});
+
+app.get("/writenew", (req, res) => {
+  res.render("writeArticle/newwrite");
+});
+app.post("/writenew", (req, res) => {
+  var body = req.body;
+  var sql = "Insert into new (id,n_title,n_txt) VALUES (?,?,?) ";
+  var params = ["익명", body.title, body.text];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/new");
+    }
+  });
+});
+
+app.get("/writeinfo", (req, res) => {
+  res.render("writeArticle/infowrite");
+});
+app.post("/writeinfo", (req, res) => {
+  var body = req.body;
+  var sql = "Insert into info (id,i_title,i_txt) VALUES (?,?,?) ";
+  var params = ["익명", body.title, body.text];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/info");
+    }
+  });
+});
+
+app.get("/writeteam", (req, res) => {
+  res.render("writeArticle/teamwrite");
+});
+app.post("/writeteam", (req, res) => {
+  var body = req.body;
+  var sql = "Insert into team (id,t_title,t_txt) VALUES (?,?,?) ";
+  var params = ["익명", body.title, body.text];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/team");
+    }
+  });
+});
+
+app.get("/writeprom", (req, res) => {
+  res.render("writeArticle/promwrite");
+});
+app.post("/writeprom", (req, res) => {
+  var body = req.body;
+  var sql = "Insert into prom (id,p_title,p_txt) VALUES (?,?,?) ";
+  var params = ["익명", body.title, body.text];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/prom");
+    }
+  });
+});
+// CREATE 기능
+
+// 로그인 기능
 app.get("/login", (req, res) => {
   if (req.session.logined) {
     res.render("index", { id: req.session.userid });
@@ -386,6 +524,7 @@ app.post("logout", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register");
 });
+// 로그인 기능
 
 app.listen(port, () => {
   console.log(`Example App Listening at http://localhost:${port}`);
