@@ -325,6 +325,7 @@ app.get("/team/:id", (req, res) => {
     } else {
       res.render("showArticle/teamshow", {
         row: rows[0],
+        id: req.params.id,
       });
       console.log(rows[0]);
     }
@@ -332,6 +333,10 @@ app.get("/team/:id", (req, res) => {
 });
 
 // READ 기능 (특정글)
+
+// EDIT 기능
+
+// EDIT 기능
 
 // CREATE 기능
 
@@ -471,6 +476,16 @@ app.post("/writeprom", (req, res) => {
   });
 });
 // CREATE 기능
+
+// DELETE 기능
+app.get("/delete/:id", (req, res) => {
+  const sql = "DELETE FROM free where id = ?";
+  client.query(sql, [req.params.id], () => {
+    res.redirect("/free");
+  });
+});
+
+// DELETE 기능
 
 // 로그인 기능
 app.get("/login", (req, res) => {
