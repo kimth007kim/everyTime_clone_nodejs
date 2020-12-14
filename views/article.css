@@ -408,10 +408,10 @@ li {
   font-weight: bold;
 }
 
-#board > div.article > .profile > p.edit {
+#board > div.article > .profile > a > p.edit {
   float: right;
 }
-#board > div.article > .profile > p.delete {
+#board > div.article > .profile > a > p.delete {
   color: red;
   float: right;
   margin-left: 10px;

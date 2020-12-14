@@ -236,6 +236,7 @@ app.get("/free/:id", (req, res) => {
         row: rows[0],
       });
       console.log(rows[0]);
+      console.log(rows[0].f_num);
     }
   });
 });
@@ -479,12 +480,26 @@ app.post("/writeprom", (req, res) => {
 
 // DELETE 기능
 app.get("/delete/:id", (req, res) => {
-  const sql = "DELETE FROM free where id = ?";
-  client.query(sql, [req.params.id], () => {
+  const sql = "DELETE FROM free where f_num = ?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
     res.redirect("/free");
   });
 });
 
+// app.get("/team/:id", (req, res) => {
+//   const sql = "Select * from team where t_num=?";
+//   client.query(sql, [req.params.id], (err, rows, fields) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.render("showArticle/teamshow", {
+//         row: rows[0],
+//         id: req.params.id,
+//       });
+//       console.log(rows[0]);
+//     }
+//   });
+// });
 // DELETE 기능
 
 // 로그인 기능
