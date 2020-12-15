@@ -1,0 +1,16 @@
+extends ../articleLayout
+
+block content
+    #main
+        #board
+            #title.article
+                h1
+                    a(href='/new') 새내기게시판
+            #writeArticle
+                form.write(method="post")
+                    p 
+                        input(name="title"  class="title" value=row.n_title)
+                    p 
+                        //- input(name="text" class="smallplaceholder large"  value=row.n_txt)
+                        textarea(name="text" class="smallplaceholder large"  placeholder=row.n_txt)
+                    input(type="submit").submit

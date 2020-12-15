@@ -236,7 +236,6 @@ app.get("/free/:id", (req, res) => {
         row: rows[0],
       });
       console.log(rows[0]);
-      console.log(rows[0].f_num);
     }
   });
 });
@@ -335,7 +334,235 @@ app.get("/team/:id", (req, res) => {
 
 // READ 기능 (특정글)
 
+// free secret grad market new info team prom
 // EDIT 기능
+
+app.get("/editfree/:id", (req, res) => {
+  const sql = "Select * from free where f_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("editArticle/freeedit", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+      console.log(rows[0].f_txt);
+    }
+  });
+});
+app.post("/editfree/:id", (req, res) => {
+  var body = req.body;
+  var adress = req.params.id;
+  var sql = "Update free SET f_title=?, f_txt=? where f_num=?";
+  var params = [body.title, body.text, req.params.id];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/free/" + adress);
+    }
+  });
+});
+app.get("/editsecret/:id", (req, res) => {
+  const sql = "Select * from secret where s_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("editArticle/secretedit", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+      console.log(rows[0].s_txt);
+    }
+  });
+});
+app.post("/editsecret/:id", (req, res) => {
+  var body = req.body;
+  var adress = req.params.id;
+  var sql = "Update secret SET s_title=?, s_txt=? where s_num=?";
+  var params = [body.title, body.text, req.params.id];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/secret/" + adress);
+    }
+  });
+});
+app.get("/editgrad/:id", (req, res) => {
+  const sql = "Select * from grad where g_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("editArticle/gradedit", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+      console.log(rows[0].g_txt);
+    }
+  });
+});
+app.post("/editgrad/:id", (req, res) => {
+  var body = req.body;
+  var adress = req.params.id;
+  var sql = "Update grad SET g_title=?, g_txt=? where g_num=?";
+  var params = [body.title, body.text, req.params.id];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/grad/" + adress);
+    }
+  });
+});
+
+app.get("/editmarket/:id", (req, res) => {
+  const sql = "Select * from market where m_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("editArticle/marketedit", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+      console.log(rows[0].m_txt);
+    }
+  });
+});
+app.post("/editmarket/:id", (req, res) => {
+  var body = req.body;
+  var adress = req.params.id;
+  var sql = "Update market SET m_title=?, m_txt=? where m_num=?";
+  var params = [body.title, body.text, req.params.id];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/market/" + adress);
+    }
+  });
+});
+
+app.get("/editnew/:id", (req, res) => {
+  const sql = "Select * from new where n_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("editArticle/newedit", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+      console.log(rows[0].n_txt);
+    }
+  });
+});
+app.post("/editnew/:id", (req, res) => {
+  var body = req.body;
+  var adress = req.params.id;
+  var sql = "Update new SET n_title=?, n_txt=? where n_num=?";
+  var params = [body.title, body.text, req.params.id];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/new/" + adress);
+    }
+  });
+});
+app.get("/editinfo/:id", (req, res) => {
+  const sql = "Select * from info where i_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("editArticle/infoedit", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+      console.log(rows[0].i_txt);
+    }
+  });
+});
+app.post("/editinfo/:id", (req, res) => {
+  var body = req.body;
+  var adress = req.params.id;
+  var sql = "Update info SET i_title=?, i_txt=? where i_num=?";
+  var params = [body.title, body.text, req.params.id];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/info/" + adress);
+    }
+  });
+});
+app.get("/editprom/:id", (req, res) => {
+  const sql = "Select * from prom where p_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("editArticle/promedit", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+      console.log(rows[0].p_txt);
+    }
+  });
+});
+app.post("/editprom/:id", (req, res) => {
+  var body = req.body;
+  var adress = req.params.id;
+  var sql = "Update prom SET p_title=?, p_txt=? where p_num=?";
+  var params = [body.title, body.text, req.params.id];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/prom/" + adress);
+    }
+  });
+});
+app.get("/editteam/:id", (req, res) => {
+  const sql = "Select * from team where t_num=?";
+  client.query(sql, [req.params.id], (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("editArticle/teamedit", {
+        row: rows[0],
+      });
+      console.log(rows[0]);
+      console.log(rows[0].t_txt);
+    }
+  });
+});
+app.post("/editteam/:id", (req, res) => {
+  var body = req.body;
+  var adress = req.params.id;
+  var sql = "Update team SET t_title=?, t_txt=? where t_num=?";
+  var params = [body.title, body.text, req.params.id];
+  client.query(sql, params, function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows.insertId);
+      res.redirect("/team/" + adress);
+    }
+  });
+});
 
 // EDIT 기능
 
@@ -479,28 +706,54 @@ app.post("/writeprom", (req, res) => {
 // CREATE 기능
 
 // DELETE 기능
-app.get("/delete/:id", (req, res) => {
+app.get("/deletefree/:id", (req, res) => {
   const sql = "DELETE FROM free where f_num = ?";
-  client.query(sql, [req.params.id], (err, rows, fields) => {
+  client.query(sql, [req.params.id], () => {
     res.redirect("/free");
   });
 });
-
-// app.get("/team/:id", (req, res) => {
-//   const sql = "Select * from team where t_num=?";
-//   client.query(sql, [req.params.id], (err, rows, fields) => {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       res.render("showArticle/teamshow", {
-//         row: rows[0],
-//         id: req.params.id,
-//       });
-//       console.log(rows[0]);
-//     }
-//   });
-// });
-// DELETE 기능
+app.get("/deletesecret/:id", (req, res) => {
+  const sql = "DELETE FROM secret where s_num = ?";
+  client.query(sql, [req.params.id], () => {
+    res.redirect("/secret");
+  });
+});
+app.get("/deletegrad/:id", (req, res) => {
+  const sql = "DELETE FROM grad where g_num = ?";
+  client.query(sql, [req.params.id], () => {
+    res.redirect("/grad");
+  });
+});
+app.get("/deletemarket/:id", (req, res) => {
+  const sql = "DELETE FROM market where m_num = ?";
+  client.query(sql, [req.params.id], () => {
+    res.redirect("/market");
+  });
+});
+app.get("/deletenew/:id", (req, res) => {
+  const sql = "DELETE FROM new where n_num = ?";
+  client.query(sql, [req.params.id], () => {
+    res.redirect("/new");
+  });
+});
+app.get("/deleteinfo/:id", (req, res) => {
+  const sql = "DELETE FROM info where i_num = ?";
+  client.query(sql, [req.params.id], () => {
+    res.redirect("/info");
+  });
+});
+app.get("/deleteteam/:id", (req, res) => {
+  const sql = "DELETE FROM team where t_num = ?";
+  client.query(sql, [req.params.id], () => {
+    res.redirect("/team");
+  });
+});
+app.get("/deleteprom/:id", (req, res) => {
+  const sql = "DELETE FROM prom where p_num = ?";
+  client.query(sql, [req.params.id], () => {
+    res.redirect("/prom");
+  });
+});
 
 // 로그인 기능
 app.get("/login", (req, res) => {

@@ -1,0 +1,16 @@
+extends ../articleLayout
+
+block content
+    #main
+        #board
+            #title.article
+                h1
+                    a(href='/prom') 홍보게시판
+            #writeArticle
+                form.write(method="post")
+                    p 
+                        input(name="title"  class="title" value=row.p_title)
+                    p 
+                        //- input(name="text" class="smallplaceholder large"  value=row.p_txt)
+                        textarea(name="text" class="smallplaceholder large"  placeholder=row.p_txt)
+                    input(type="submit").submit

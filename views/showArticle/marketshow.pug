@@ -5,15 +5,15 @@ block content
         #board
             #title.article
                 h1
-                    a(href='/free') 장터 
+                    a(href='/market') 장터 
             #text.article
                 img.profileimg(src="/0.png")
                 .profile
                     h3.large 익명
                     time.large 비공개
-                    a(href='/')
+                    a(href="/deletemarket/"+row.m_num)
                         p.delete 삭제
-                    a(href='/')
+                    a(href="/editmarket/"+row.m_num)
                         p.edit 수정
                     h2.large=row.m_title
 

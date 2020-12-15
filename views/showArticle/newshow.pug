@@ -10,18 +10,19 @@ block content
                 img.profileimg(src="/0.png")
                 .profile
                     h3.large 익명
-                    a(href='/')
+                    time.large 비공개
+                    a(href="/deletenew/"+row.n_num)
                         p.delete 삭제
-                    a(href='/')
+                    a(href="/editnew/"+row.n_num)
                         p.edit 수정
                     h2.large=row.n_title
 
                     p.large=row.n_txt
             #comment
-                //- .parent
-                //-     img.commentpro(src="https://cf-fpi.everytime.kr/0.png")
-                //-     h3.medium 익명
-                //-     p.large 아기고양이가 어디있다는 거에요? 아기고양이가?3
+                .parent
+                    img.commentpro(src="https://cf-fpi.everytime.kr/0.png")
+                    h3.medium 익명
+                    p.large 아기고양이가 어디있다는 거에요? 아기고양이가?3
                 form(action='/login' method='post').writecomment
                     input(type='text' name='text' placeholder='댓글을 입력하세요').commentblank
                     input(type="submit").submit 

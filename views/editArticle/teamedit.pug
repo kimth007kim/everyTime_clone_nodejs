@@ -1,0 +1,16 @@
+extends ../articleLayout
+
+block content
+    #main
+        #board
+            #title.article
+                h1
+                    a(href='/team') 동아리게시판
+            #writeArticle
+                form.write(method="post")
+                    p 
+                        input(name="title"  class="title" value=row.t_title)
+                    p 
+                        //- input(name="text" class="smallplaceholder large"  value=row.t_txt)
+                        textarea(name="text" class="smallplaceholder large"  placeholder=row.t_txt)
+                    input(type="submit").submit
