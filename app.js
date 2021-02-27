@@ -27,7 +27,6 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: true,
-    store: new FileStore(),
   })
 );
 app.use(express.json());
@@ -763,10 +762,50 @@ app.get("/login", (req, res) => {
     res.render("login", { pass: "tr" });
   }
 });
+// app.post("/login", (req, res) => {
+//   var id = req.body.userid;
+//   var pw = req.body.password;
+//   var sql = "Select * from user where id=?";
+//   client.query(sql, [id], (err, results, fields) => {
+//     if (err) {
+//       console.log("에러발생", err);
+//       res.send({
+//         code: 400,
+//         failed: "error ocurred",
+//       });
+//     } else {
+//       if (results.length > 0) {
+//         if (results[0].password == pw) {
+//           req.session.logined = true;
+//           req.session.userid = id;
+//           console.log(req.session.logined);
+//           console.log("로그인 성공");
+
+//           res.redirect("/");
+//           // res.redirect("/", { pass: "logined" });
+//           // res.render("index", { pass: "logined" });
+//         } else {
+//           console.log("false1");
+//           res.render("login", { pass: "false1" });
+//           // res.redirect("/");
+//         }
+//       } else {
+//         // alert("아이디가 존재 하지 않습니다.")
+//         console.log("false2");
+//         res.render("login", { pass: "false2" });
+//       }
+//     }
+//   });
+//   console.log(id);
+//   console.log(pw);
+// });
 app.post("/login", (req, res) => {
   var id = req.body.userid;
   var pw = req.body.password;
   var sql = "Select * from user where id=?";
+  console.log(id);
+  console.log(pw);
+
   client.query(sql, [id], (err, results, fields) => {
     if (err) {
       console.log("에러발생", err);
