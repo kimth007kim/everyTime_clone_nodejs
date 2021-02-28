@@ -15,7 +15,7 @@ html
                         span.schoolname 김경동
                 #account
                     if pass == "logined"
-                        a(href='/login').button 로그아웃
+                        a(href='/logout').button 로그아웃
                     else
                         a(href='/login').button 로그인
                         a(href='/register').button.red 회원가입
@@ -75,11 +75,14 @@ html
                     #lfbar
                         #lflogin
                             form.login(action='/login' method='get')
-                                h3 커뮤니티 이용을 위해
-                                    br
-                                    strong 로그인이 필요합니다.
-                                a(href='/login').button.login 로그인
-                                a(href='/register').button.register 회원가입
+                                if(session.userid)
+                                    p #{session.userid} 안녕하세요
+                                else
+                                    h3 커뮤니티 이용을 위해
+                                        br
+                                        strong 로그인이 필요합니다.
+                                    a(href='/login').button.login 로그인
+                                    a(href='/register').button.register 회원가입
                         #lfad1
                         #lfad2
                         #lfad3

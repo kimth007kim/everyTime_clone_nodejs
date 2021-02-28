@@ -24,14 +24,17 @@ app.set("view engine", "pug");
 app.use(cookieParser());
 app.use(
   session({
-    secret: "keyboard cat",
-    resave: false,
+    secret: "my key",
+    resave: true,
     saveUninitialized: true,
   })
 );
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(function (req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
 // 3번째 시도  두번째 쿼리를 콜백 함수 안에다가 집어넣기
 
 let user = {
@@ -757,9 +760,12 @@ app.get("/deleteprom/:id", (req, res) => {
 // 로그인 기능
 app.get("/login", (req, res) => {
   if (req.session.logined) {
-    res.render("index", { id: req.session.userid });
+    // res.render("index", { id: req.session.userid });
+    res.redirect("/");
+    console.log("로그인 되어있다.");
   } else {
-    res.render("login", { pass: "tr" });
+    res.render("login");
+    console.log("로그인 안되어있다.");
   }
 });
 // app.post("/login", (req, res) => {
@@ -800,44 +806,44 @@ app.get("/login", (req, res) => {
 //   console.log(pw);
 // });
 app.post("/login", (req, res) => {
-  var id = req.body.userid;
-  var pw = req.body.password;
-  var sql = "Select * from user where id=?";
-  console.log(id);
-  console.log(pw);
+  if (req.session.user) {
+    console.log("이미 로그인되어있음");
+    alert("이미 로그인 되어있다.");
+    req.redirect("/");
+  } else {
+    var id = req.body.userid;
+    var pw = req.body.password;
+    var sql = "Select * from user where id=?";
 
-  client.query(sql, [id], (err, results, fields) => {
-    if (err) {
-      console.log("에러발생", err);
-      res.send({
-        code: 400,
-        failed: "error ocurred",
-      });
-    } else {
-      if (results.length > 0) {
-        if (results[0].password == pw) {
-          req.session.logined = true;
-          req.session.userid = id;
-          console.log(req.session.logined);
-          console.log("로그인 성공");
-
-          res.redirect("/");
-          // res.redirect("/", { pass: "logined" });
-          // res.render("index", { pass: "logined" });
-        } else {
-          console.log("false1");
-          res.render("login", { pass: "false1" });
-          // res.redirect("/");
-        }
+    client.query(sql, [id], (err, results, fields) => {
+      if (err) {
+        console.log("에러발생", err);
+        res.send({
+          code: 400,
+          failed: "error ocurred",
+        });
       } else {
-        // alert("아이디가 존재 하지 않습니다.")
-        console.log("false2");
-        res.render("login", { pass: "false2" });
+        if (results.length > 0) {
+          if (results[0].password == pw) {
+            req.session.logined = true;
+            req.session.userid = id;
+            console.log("로그인 성공");
+            req.session.save(function () {
+              return res.redirect("/");
+            });
+          } else {
+            console.log("비번이 틀렸습니다.");
+            res.render("login");
+            // res.redirect("/");
+          }
+        } else {
+          // alert("아이디가 존재 하지 않습니다.")
+          console.log("아이디가 없다");
+          res.render("login");
+        }
       }
-    }
-  });
-  console.log(id);
-  console.log(pw);
+    });
+  }
 });
 app.post("logout", (req, res) => {
   req.session.destroy();
