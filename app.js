@@ -845,7 +845,23 @@ app.post("/login", (req, res) => {
     });
   }
 });
-app.post("logout", (req, res) => {
+app.get("/logout", (req, res) => {
+  console.log("로그아웃");
+  if (req.session.logined) {
+    req.session.destroy(function (err) {
+      res.clearCookie("connect.sid");
+      if (err) {
+        console.log();
+        return;
+      }
+      console.log("세션 삭제 성공");
+      res.redirect("/");
+    });
+  } else {
+    res.redirect("/");
+  }
+});
+app.post("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });

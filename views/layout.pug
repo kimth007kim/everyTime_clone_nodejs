@@ -14,8 +14,9 @@ html
                         span.eta 에브리타임
                         span.schoolname 김경동
                 #account
-                    if pass == "logined"
-                        a(href='/logout').button 로그아웃
+                    if(session.userid)
+                        p #{session.userid} 님 안녕하세요
+                        a(href='/logout').button.red 로그아웃
                     else
                         a(href='/login').button 로그인
                         a(href='/register').button.red 회원가입
@@ -76,7 +77,10 @@ html
                         #lflogin
                             form.login(action='/login' method='get')
                                 if(session.userid)
-                                    p #{session.userid} 안녕하세요
+                                    h3 안녕하세요!
+                                        br
+                                        strong #{session.userid} 님 반갑습니다!
+                                    a(href='/logout').button.register 로그아웃
                                 else
                                     h3 커뮤니티 이용을 위해
                                         br

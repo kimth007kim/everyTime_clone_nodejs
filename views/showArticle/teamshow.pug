@@ -11,10 +11,11 @@ block content
                 .profile
                     h3.large 익명
                     time.large 비공개
-                    a(href="/deleteteam/"+row.t_num)
-                        p.delete 삭제
-                    a(href="/editteam/"+row.t_num)
-                        p.edit 수정
+                    if session.userid==row.id
+                        a(href="/deleteteam/"+row.t_num)
+                            p.delete 삭제
+                        a(href="/editteam/"+row.t_num)
+                            p.edit 수정
                     h2.large=row.t_title
 
                     p.large=row.t_txt

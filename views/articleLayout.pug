@@ -14,8 +14,12 @@ html
                         span.eta 에브리타임
                         span.schoolname 안양대
                 #account
-                    a(href='/login').button 로그인
-                    a(href='/register').button.red 회원가입
+                    if(session.userid)
+                        p #{session.userid} 님 안녕하세요
+                        a(href='/logout').button.red 로그아웃
+                    else
+                        a(href='/login').button 로그인
+                        a(href='/register').button.red 회원가입
                 #menu
                     ul 
                         li 

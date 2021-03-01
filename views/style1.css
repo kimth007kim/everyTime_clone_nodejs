@@ -147,6 +147,18 @@ nav > div.wrap {
   vertical-align: top;
   color: #666;
 }
+#account p {
+  position: relative;
+  display: inline-block;
+  margin-left: 4px;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  /* border: 1px solid #d6d6d6; */
+  /* border-radius: 12px; */
+  vertical-align: top;
+  color: #666;
+}
 
 #account a.button.red {
   border: 0;
