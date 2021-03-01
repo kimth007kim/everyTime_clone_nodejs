@@ -808,7 +808,6 @@ app.get("/login", (req, res) => {
 app.post("/login", (req, res) => {
   if (req.session.user) {
     console.log("이미 로그인되어있음");
-    alert("이미 로그인 되어있다.");
     req.redirect("/");
   } else {
     var id = req.body.userid;
